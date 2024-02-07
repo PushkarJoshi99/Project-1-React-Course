@@ -4,9 +4,10 @@ import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-	function handleClick() {
-		console.log("hello world")
+	function handleSelect(whichButton) {
+		console.log(`${whichButton} button clicked`);
 	}
+
 	return (
 		<div>
 			<Header />
@@ -23,10 +24,12 @@ function App() {
 				<section id="examples">
 					<h2>Examples</h2>
 					<menu>
-						<TabButton onClickEvent = {handleClick}>Components</TabButton>
-						<TabButton onClickEvent = {handleClick}>JSX</TabButton>
-						<TabButton onClickEvent = {handleClick}>Props</TabButton>
-						<TabButton onClickEvent = {handleClick}>State</TabButton>
+						<TabButton onClick={() => handleSelect("components")}>
+							Components
+						</TabButton>
+						<TabButton onClick={() => handleSelect("jsx")}>jsx</TabButton>
+						<TabButton onClick={() => handleSelect("props")}>props</TabButton>
+						<TabButton onClick={() => handleSelect("state")}>state</TabButton>
 					</menu>
 				</section>
 			</main>
