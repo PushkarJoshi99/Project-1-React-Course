@@ -1,6 +1,6 @@
-export default function Section({title,children,id}) {
+export default function Section({title,children,...extra}) {
   return (
-    <section id = {id}>
+    <section {...extra}>
       <h2>{title}</h2>
       {children}
     </section>
